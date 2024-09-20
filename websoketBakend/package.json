@@ -1,0 +1,36 @@
+{
+  "name": "live-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file=.env dist/index.mjs",
+    "build": "yarn run tsup",
+    "dev": "yarn build --watch --onSuccess \"yarn run start\"",
+    "copy:frontend": "cp -r ./src/messagesInterfaces/ ../frontend/src/components/Websockets/interfaces/",
+    "copy": "npm copy:frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "http": "0.0.1-security",
+    "lodash": "^4.17.21",
+    "query-string": "^9.0.0",
+    "randomcolor": "^0.6.2",
+    "tsup": "^8.0.2",
+    "uuid": "^9.0.1",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/node": "^20.11.26",
+    "@types/randomcolor": "^0.5.9",
+    "@types/uuid": "^9.0.8",
+    "@types/ws": "^8.5.10",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.1.3",
+    "typescript": "^5.4.2"
+  }
+}
