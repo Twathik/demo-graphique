@@ -24,6 +24,7 @@ const createTimeSeriesChartSlice: StateCreator<
   timeSeriesData: initialData,
   pushTimeSeriesData(data) {
     set((s) => {
+      s.timeSeriesData.shift();
       s.timeSeriesData.push(data);
     });
   },

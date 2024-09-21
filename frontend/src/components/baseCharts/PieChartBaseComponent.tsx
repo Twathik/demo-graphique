@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { CategoriesChartMessageInterface } from "../Websockets/interfaces/CategoriesChartMessageInterface";
@@ -5,21 +6,23 @@ type DATA = CategoriesChartMessageInterface["data"][0];
 
 const PieChartBaseComponent = (props: {
   data: CategoriesChartMessageInterface["data"];
-  width: number;
-  height: number;
-  innerRadius: number;
-  outerRadius: number;
 }) => {
   const ref = useRef(null);
   const cache = useRef(props.data);
+
+  const width = 500;
+  const height = Math.min(500, width / 2);
+  const outerRadius = height / 2 - 10;
+  const innerRadius = outerRadius * 0.5;
+
   const createPie = d3
     .pie<DATA>()
     .value((d) => d.rate)
     .sort(null);
   const createArc = d3
     .arc<d3.PieArcDatum<DATA>>()
-    .innerRadius(props.innerRadius)
-    .outerRadius(props.outerRadius);
+    .innerRadius(innerRadius)
+    .outerRadius(outerRadius);
   const colors = d3.scaleOrdinal(d3.schemeCategory10);
 
   useEffect(() => {
@@ -61,7 +64,7 @@ const PieChartBaseComponent = (props: {
       .attr("text-anchor", "middle")
       .attr("alignment-baseline", "middle")
       .style("fill", "white")
-      .style("font-size", 16)
+      .style("font-size", height / 20)
       .join("text")
 
       .attr("transform", (d) => `translate(${createArc.centroid(d)})`)
@@ -75,21 +78,21 @@ const PieChartBaseComponent = (props: {
       });
 
     cache.current = props.data;
-  }, [props.data]);
+  }, [colors, createArc, createPie, height, props.data]);
 
   return (
     <div className="w-full">
       <div className=" flex flex-row justify-center">
-        <div className="text-center underline text-2xl m-4">
+        <div className="text-center underline md:text-2xl m-4">
           Representation dynamique des framworks selon leur frequence (5 sec
           refresh)
         </div>
       </div>
-      <div className="flex flex-row w-full justify-center m-h-[60vh] items-center">
-        <svg width={props.width} height={props.height}>
+      <div className="flex flex-row w-full justify-center items-center">
+        <svg viewBox={`0 0 ${width} ${height}`} style={{ maxWidth: "70vw" }}>
           <g
             ref={ref}
-            transform={`translate(${props.outerRadius} ${props.outerRadius})`}
+            transform={`translate(${outerRadius + width / 4} ${outerRadius})`}
           />
         </svg>
       </div>

@@ -21,7 +21,7 @@ export default function Home() {
               Veuillez selectionnez un type de graphique
             </CardDescription>
           </CardHeader>
-          <CardContent className="min-h-[70vh] min-w-[90vw]">
+          <CardContent className="md:min-h-[50vh] md:min-w-[90vw]">
             <TimeSeriesChartComponent />
           </CardContent>
           <CardFooter className="flex justify-end gap-4">

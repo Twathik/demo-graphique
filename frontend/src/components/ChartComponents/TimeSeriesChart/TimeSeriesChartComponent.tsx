@@ -9,11 +9,11 @@ function TimeSeriesChartComponent() {
   const data = useAppStore((s) => s.timeSeriesData);
 
   return (
-    <div className="grid grid-cols-3 gap-4">
-      <div className="col-span-1">
+    <div className="grid md:grid-cols-3 gap-4">
+      <div className="md:col-span-1">
         <AddEntryForm />
       </div>
-      <div className="shadow-xl rounded-md border-2 border-slate-400 border-solid col-span-2">
+      <div className="shadow-xl rounded-md border-2 border-slate-400 border-solid md:col-span-2">
         <LineChartComponent data={data} />
       </div>
     </div>

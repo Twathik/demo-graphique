@@ -47,13 +47,13 @@ function BarChartBaseComponent({
 
       // Create the SVG container.
 
-      svg
+      /* svg
         .append("svg")
         .attr("viewBox", [0, 0, width, height])
         .attr(
           "style",
           `max-width: ${width}px; height: auto; font: 10px sans-serif; overflow: visible;`
-        );
+        ); */
 
       // Create a bar for each framwork.
       const bar = svg
@@ -106,8 +106,9 @@ function BarChartBaseComponent({
   }, [svg, height, width, data]);
 
   useEffect(() => {
+    if (!chartRef || !chartRef.current) return;
     function updateWidth() {
-      setWidth(chartRef.current?.clientWidth ?? width);
+      setWidth(chartRef.current!.clientWidth ?? width);
     }
     const handleResize = debounce(updateWidth, 500);
     updateWidth();
@@ -122,12 +123,12 @@ function BarChartBaseComponent({
   return (
     <div className="w-full">
       <div className=" flex flex-row justify-center">
-        <div className="text-center underline text-2xl">
+        <div className="text-center underline md:text-2xl m-4">
           Representation dynamique des framworks selon leur frequence (5 sec
           refresh)
         </div>
       </div>
-      <svg ref={chartRef} width={width} height={height}></svg>
+      <svg ref={chartRef} viewBox={`0 0 ${width} ${height}`}></svg>
     </div>
   );
 }

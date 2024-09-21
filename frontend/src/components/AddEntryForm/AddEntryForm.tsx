@@ -31,7 +31,7 @@ function AddEntryForm() {
       <div className="underline flex justify-center text-2xl">
         Add new price
       </div>
-      <div className="p-10 mt-10">
+      <div className="lg:p-10  lg:mt-5  mt-3 p-2">
         <Input
           placeholder="New price"
           type="number"
@@ -44,7 +44,7 @@ function AddEntryForm() {
           between 30 and 80 dollars
         </div>
       </div>
-      <div className="px-10 flex flex-row justify-end gap-4">
+      <div className="lg:px-10 flex flex-row justify-end gap-4 px-5">
         <Button onClick={addRandomPrice}>Add Random</Button>
         <Button disabled={price < 30 || price > 80} onClick={updatePrice}>
           Add

@@ -1,5 +1,4 @@
 import BarChartComponent from "@/components/ChartComponents/CategoryCharts/BarChartComponent";
-import PieChartComponent from "@/components/ChartComponents/CategoryCharts/PieChartComponent";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 
 export default function Home() {
@@ -23,7 +21,7 @@ export default function Home() {
               Veuillez selectionnez un type de graphique
             </CardDescription>
           </CardHeader>
-          <CardContent className="min-h-[70vh] min-w-[90vw]">
+          <CardContent className="md:min-h-[50vh]">
             <BarChartComponent />
           </CardContent>
           <CardFooter className="flex justify-end gap-4">
