@@ -96,7 +96,7 @@ function LineChartComponent({ data }: { data: TimeSeries[] }) {
     <div className="w-full">
       <div className=" flex flex-row justify-center">
         <div className="text-center underline text-2xl">
-          Time serie statique
+          Time serie (updatable)
         </div>
       </div>
       <div className="flex flex-row justify-center">
