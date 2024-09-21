@@ -2,6 +2,6 @@ this package uses **tsup** which is incompatible with **npm** package manager, s
 
 if not installed use this command to install it globally **npm install --global yarn** or **npm install -g pnpm**
 
-run **yarn** and **yarn dev** in both packages
+run **yarn** and **yarn dev** into both packages
 
 The frontend is exposed at **http://localhost:3000**
