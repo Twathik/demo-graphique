@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";

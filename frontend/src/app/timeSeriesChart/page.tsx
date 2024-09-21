@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import TimeSeriesChart from "@/components/ChartComponents/TimeSeriesChart/TimeSeriesChart";
+import TimeSeriesChartComponent from "@/components/ChartComponents/TimeSeriesChart/TimeSeriesChartComponent";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
             </CardDescription>
           </CardHeader>
           <CardContent className="min-h-[70vh] min-w-[90vw]">
-            <TimeSeriesChart />
+            <TimeSeriesChartComponent />
           </CardContent>
           <CardFooter className="flex justify-end gap-4">
             <Link href="/pieChart" prefetch>
