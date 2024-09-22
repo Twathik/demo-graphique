@@ -5,3 +5,5 @@ if not installed use this command to install it globally **npm install --global 
 run **yarn** and **yarn dev** into both packages
 
 The frontend is exposed at **http://localhost:3000**
+
+This project uses Websocket technology for synced real time data, feel free to open several tabs to check it out

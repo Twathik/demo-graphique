@@ -81,11 +81,10 @@ const PieChartBaseComponent = (props: {
   }, [colors, createArc, createPie, height, props.data]);
 
   return (
-    <div className="w-full">
+    <div className="min-w-[50vw]">
       <div className=" flex flex-row justify-center">
         <div className="text-center underline md:text-2xl m-4">
-          Representation dynamique des framworks selon leur frequence (5 sec
-          refresh)
+          Pie chart (5 sec refresh, real time sync)
         </div>
       </div>
       <div className="flex flex-row w-full justify-center items-center">

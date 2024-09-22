@@ -16,15 +16,20 @@ export default function Home() {
       <div className="flex flex-row justify-center">
         <Card>
           <CardHeader>
-            <CardTitle>Exemples de graphique</CardTitle>
+            <CardTitle>Chart examples</CardTitle>
             <CardDescription>
-              Veuillez selectionnez un type de graphique
+              Select a chart, open in multiple tabs to check real time sync
             </CardDescription>
           </CardHeader>
           <CardContent className="md:min-h-[50vh]">
             <PieChartComponent />
           </CardContent>
           <CardFooter className="flex justify-end gap-4">
+            <Link href="/pieChart" prefetch target="_blank">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-slate-900">
+                Open in new tab
+              </Button>
+            </Link>
             <Link href="/barChart" prefetch>
               <Button>Bar Chart</Button>
             </Link>

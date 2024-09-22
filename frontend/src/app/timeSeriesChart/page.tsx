@@ -16,10 +16,8 @@ export default function Home() {
       <div className="flex flex-row justify-center">
         <Card>
           <CardHeader>
-            <CardTitle>Exemples de graphique</CardTitle>
-            <CardDescription>
-              Veuillez selectionnez un type de graphique
-            </CardDescription>
+            <CardTitle>Chart examples</CardTitle>
+            <CardDescription>Select a chart</CardDescription>
           </CardHeader>
           <CardContent className="md:min-h-[50vh] md:min-w-[90vw]">
             <TimeSeriesChartComponent />

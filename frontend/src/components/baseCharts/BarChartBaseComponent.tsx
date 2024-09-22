@@ -121,11 +121,10 @@ function BarChartBaseComponent({
   }, [width]);
 
   return (
-    <div className="w-full">
+    <div className="min-w-[50vw]">
       <div className=" flex flex-row justify-center">
         <div className="text-center underline md:text-2xl m-4">
-          Representation dynamique des framworks selon leur frequence (5 sec
-          refresh)
+          Bar chart (5 sec refresh, real time sync)
         </div>
       </div>
       <svg ref={chartRef} viewBox={`0 0 ${width} ${height}`}></svg>
